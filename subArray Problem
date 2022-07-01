@@ -1,0 +1,17 @@
+def subArraySum(self,arr, n, s): 
+       #Write your code here
+        sum=arr[0]
+        j=0
+        i=0
+        while(i<n):
+            if(sum==s):
+                return [j+1,i+1]
+            elif(sum>s):
+                sum=sum-arr[j]
+                j=j+1
+            else:
+                i=i+1
+                sum=sum+arr[i]
+                
+            
+        return [-1]
