@@ -1,0 +1,27 @@
+class GfG
+{
+    //Function to locate the occurrence of the string x in the string s.
+    int strstr(String s, String x)
+    {
+       // Your code here
+       int l=x.length();
+       int n=s.length();
+       if(l==n){
+        if(s.equals(x))
+            return 0;
+       }
+       for(int i=0;i<n;i++){
+           if(s.charAt(i)==x.charAt(0)){
+               if(l==1)
+                return i;
+               for(int j=1;j<l;j++){
+                   if(((i+l)>n) || s.charAt(i+j)!=x.charAt(j))
+                     break;
+                    else if(j==l-1)
+                        return i;
+               }
+           }
+       }
+       return -1;
+    }
+}
